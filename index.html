@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tercer Entrega JS</title>
+    <title>Entrega Final JS Juarez</title>
     <!-- CSS only -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
@@ -19,8 +19,6 @@
       href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
     />
 
-    <!-- Sweet alert -->
-    
     <!-- Mi CSS -->
     <link rel="stylesheet" href="estilo.css" />
   </head>
@@ -32,12 +30,9 @@
       </h1>
 
       <h2 class="text-center">
-        Ingrese su Nombre, Apellido y E-mail para acceder a múltiples beneficios.
+        Ingrese su Nombre, Apellido y E-mail para acceder a múltiples
+        beneficios.
       </h2>
-
-      <!-- cripto Ya API -->
-
-      <div class="text-center" id="dolarSol"></div>
 
       <form class="col-xl-6 col-md-12" id="formulario">
         <label for="nombre" class="form-label">Nombre</label>
@@ -80,16 +75,41 @@
         <h3 class="col-12 text-center" id="saludoBienvenida"></h3>
       </div>
     </div>
-    <div id="containerProducts" class="row"></div>
-    <h3>
-      El total de la compra a pagar es de <span id="total"></span>
-    </h3>
-    <button class="btn colorBoton btn-dark my-2" id="verCarrito">
-      Ver Carrito
-    </button>
-    <button class="btn colorBoton btn-dark my-2" id="vaciarCarrito">
-      Vaciar Carrito
-    </button>
+    <div id="containerProducts" class="row text-center"></div>
+    <h3>El total de la compra a pagar es de <span id="total"></span></h3>
+    <!-- cripto Ya API -->
+
+    <div class="" id="dolarSol"></div>
+
+    <h4 class="" id="calculadora">Calculadora de precios</h4>
+    
+
+    <input id="1TotalDolar" type="text" placeholder="Total Compra"/>
+    <button>*</button>
+    <input id="2DolarSolidario" type="text" placeholder="Dolar Solidario Tarjeta"/>
+    <input class="btn colorBoton btn-dark my-2" type="button" id="botonCalcular" value="Calcular" />
+    <h5>El total de la compra en dolares es en pesos argentinos: $ <span id="totalCalcular"></span></h5>
+
+    <script>
+      var m1 = document.getElementById("1TotalDolar");
+      var m2 = document.getElementById("2DolarSolidario");
+      var botonMultiplica = document.getElementById("botonCalcular");
+      botonMultiplica.addEventListener("click", resultadoCalc);
+
+      function resultadoCalc() {
+        var multiplicar = m1.value * m2.value;
+        document.getElementById("totalCalcular").innerHTML = multiplicar;
+      }
+    </script>
+
+    <div>
+      <button class="btn colorBoton btn-dark my-2" id="verCarrito">
+        Ver Carrito
+      </button>
+      <button class="btn colorBoton btn-dark my-2" id="vaciarCarrito">
+        Vaciar Carrito
+      </button>
+    </div>
 
     <div id="contenedorCarrito" class="row"></div>
     <div>
@@ -101,11 +121,11 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Toastify -->
-    
+
     <script
-    type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/toastify-js"
-  ></script>
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
 
     <!-- JavaScript Bundle with Popper -->
     <script

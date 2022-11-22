@@ -99,6 +99,7 @@ const showProducts = () => {
             </div>
         `
         containerProducts.appendChild(card);
+        
 
         const boton = document.getElementById(`boton${Product.id}`);
         boton.addEventListener("click", () => {
@@ -116,6 +117,7 @@ const showProducts = () => {
         })
 
     })
+    
 }
 
 const agregarAlCarrito = (id) => {
@@ -227,11 +229,6 @@ const calcularTotal = () => {
 }
 
 
-
-
-
-
-
 const oscuro = document.getElementById("oscuro");
 
 oscuro.addEventListener("click", () => {
@@ -242,7 +239,7 @@ oscuro.addEventListener("click", () => {
 
 const criptoYa = "https://criptoya.com/api/dolar";
 
-const divDolar = document.getElementById("dolarSol");
+const dolarSol = document.getElementById("dolarSol");
 
 setInterval(() => {
     fetch(criptoYa)
@@ -251,7 +248,6 @@ setInterval(() => {
             dolarSol.innerHTML = `
             <h3>Cotización Dolar Tarjeta Solidario:$ ${solidario} </h3>
             `;
-            dolarSol= `${solidario};`;
         })
         .catch(error => console.error(error))
 
