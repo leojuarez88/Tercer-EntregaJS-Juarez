@@ -211,7 +211,24 @@ const calcularTotal = () => {
     })
     total.innerHTML = `USD: ${totalCompra}
     <button class="btn colorBoton btn-dark" id="botonComprar"> Comprar </button>`;
+
+    const botonComprar = document.getElementById("botonComprar");
+
+    botonComprar.addEventListener("click", () => {
+    Swal.fire( {
+        title: '¡Gracias por elegirnos!',
+        text: 'a continuación realizará el pago correspondiente ',
+        imageAlt: 'Custom image',
+        confirmButtonText: "Aceptar",
+        confirmButtonColor:"black",
+        background: "orange",
+    })
+});
 }
+
+
+
+
 
 
 
@@ -225,16 +242,16 @@ oscuro.addEventListener("click", () => {
 
 const criptoYa = "https://criptoya.com/api/dolar";
 
-const divDolar = document.getElementById("divDolar");
+const divDolar = document.getElementById("dolarSol");
 
 setInterval(() => {
     fetch(criptoYa)
         .then(response => response.json())
         .then(({ solidario }) => {
-            divDolar.innerHTML = `
+            dolarSol.innerHTML = `
             <h3>Cotización Dolar Tarjeta Solidario:$ ${solidario} </h3>
             `;
-            dolarSol=solidario;
+            dolarSol= `${solidario};`;
         })
         .catch(error => console.error(error))
 
